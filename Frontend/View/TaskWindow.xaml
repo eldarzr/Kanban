@@ -1,0 +1,48 @@
+﻿<Window x:Class="Frontend.View.TaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frontend.View"
+        mc:Ignorable="d"
+        Title="TaskWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Task A" HorizontalAlignment="Center" Height="51" VerticalAlignment="Top" Width="106"/>
+        <Button Content="Edit Title" Visibility="{Binding Path=VisibilityEdit,Mode=OneWay}" Background="Tan" HorizontalAlignment="Left" Height="20" Margin="266,50,0,0" VerticalAlignment="Top" Width="58" Click="UpdateTitle"/>
+        <Button Content="Edit Decription" Visibility="{Binding Path=VisibilityEdit,Mode=OneWay}" Background="Tan" HorizontalAlignment="Left" Height="20" Margin="266,91,0,0" VerticalAlignment="Top" Width="94" Click="UpdateDescription"/>
+        <Button Content="Edit Duedate" Visibility="{Binding Path=VisibilityEdit,Mode=OneWay}" Background="Tan"  HorizontalAlignment="Left" Height="20" Margin="266,190,0,0" VerticalAlignment="Top" Width="73" Click="UpdateDuedate"/>
+        <Label Content="Creation Time" HorizontalAlignment="Center" Margin="0,226,0,0"  VerticalAlignment="Top"/>
+        <Button Content="Edit Assigne" Visibility="{Binding Path=VisibilityEdit,Mode=OneWay }"  Background="Tan" HorizontalAlignment="Left" Height="24" Margin="266,266,0,0" VerticalAlignment="Top" Width="73" Click="UpdateAssigne"/>
+        <Button Content="Add Task" Visibility="{Binding Path=VisibilityAdd,Mode=OneWay}" Background="Tan" HorizontalAlignment="Left" Height="24" Margin="695,383,0,0" VerticalAlignment="Top" Width="73" Click="AddTask"/>
+        <Button Content="Back" HorizontalAlignment="Left" Height="24" Margin="616,383,0,0" Background="Tan" VerticalAlignment="Top" Width="73" Click="Back"/>
+        <Label Content="Duedate" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="375,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.993,0.284"/>
+        <Label Content="Title" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="Assigne" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top"/>
+        <TextBox  Text="{Binding Path=Title, Mode=TwoWay}"  HorizontalAlignment="Left" Height="18" Margin="489,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" />
+        <TextBox Text="{Binding Path=Description, Mode=TwoWay}" HorizontalAlignment="Left" Height="88" Margin="489,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.036"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox Text="{Binding Path=DueDate, Mode=TwoWay}" HorizontalAlignment="Left" Height="18" Margin="489,191,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="200" />
+        <TextBox Text="{Binding Path=Assignee, Mode=TwoWay}" HorizontalAlignment="Left" Height="18" Margin="489,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" />
+        <Label Content="{Binding Path=CreationTime, Mode=OneWay}" HorizontalAlignment="Left" Height="24" Margin="486,228,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.126"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+
+    </Grid>
+</Window>
